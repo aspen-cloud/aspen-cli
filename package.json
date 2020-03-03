@@ -1,5 +1,5 @@
 {
-  "name": "aspen",
+  "name": "aspen-cli",
   "description": "Backup and fetch all of your data from Gmail, Spotify, and more into a single database",
   "version": "0.1.0",
   "author": "Matthew Linkous @matlin",

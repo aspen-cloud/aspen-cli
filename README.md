@@ -29,13 +29,8 @@ USAGE
 # Commands
 <!-- commands -->
 * [`aspen help [COMMAND]`](#aspen-help-command)
-* [`aspen jarvis`](#aspen-jarvis)
-* [`aspen login`](#aspen-login)
 * [`aspen query [QUERY]`](#aspen-query-query)
-* [`aspen source`](#aspen-source)
-* [`aspen source:gmail`](#aspen-sourcegmail)
 * [`aspen source:spotify`](#aspen-sourcespotify)
-* [`aspen store [FILE]`](#aspen-store-file)
 
 ## `aspen help [COMMAND]`
 
@@ -53,28 +48,6 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
-
-## `aspen jarvis`
-
-Talk to Jarvis
-
-```
-USAGE
-  $ aspen jarvis
-```
-
-_See code: [src/commands/jarvis.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/jarvis.ts)_
-
-## `aspen login`
-
-Login or Register an account on Aspen Cloud
-
-```
-USAGE
-  $ aspen login
-```
-
-_See code: [src/commands/login.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/login.ts)_
 
 ## `aspen query [QUERY]`
 
@@ -99,32 +72,6 @@ EXAMPLES
 
 _See code: [src/commands/query.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/query.ts)_
 
-## `aspen source`
-
-Fetch and store data from external sources like Gmail, Spotify, etc.
-
-```
-USAGE
-  $ aspen source
-
-OPTIONS
-  --preview
-  --save
-```
-
-_See code: [src/commands/source/index.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/index.ts)_
-
-## `aspen source:gmail`
-
-Login or Register an account on Aspen Cloud
-
-```
-USAGE
-  $ aspen source:gmail
-```
-
-_See code: [src/commands/source/gmail.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/gmail.ts)_
-
 ## `aspen source:spotify`
 
 Download spotify data.
@@ -138,23 +85,4 @@ OPTIONS
 ```
 
 _See code: [src/commands/source/spotify.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/spotify.ts)_
-
-## `aspen store [FILE]`
-
-Store JSON data from a file or stdin into an AspenDB
-
-```
-USAGE
-  $ aspen store [FILE]
-
-OPTIONS
-  -a, --app=app  (required) id of the app to associate data with
-  -h, --help     show CLI help
-
-EXAMPLE
-  $ cat my_songs.json | aspen store --app "my-music"
-  Succesfully added 450 items
-```
-
-_See code: [src/commands/store.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/store.ts)_
 <!-- commandsstop -->
