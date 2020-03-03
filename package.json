@@ -19,7 +19,6 @@
     "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.4",
-    "jarvis": "github:hliyan/jarvis",
     "listr": "^0.14.3",
     "platform-folders": "^0.4.1",
     "pouchdb": "^7.2.1",
@@ -27,7 +26,6 @@
     "rxjs": "^6.5.4",
     "smart-request-balancer": "^2.1.1",
     "spotify-web-api-node": "^4.0.0",
-    "taiko": "^1.0.3",
     "tslib": "^1"
   },
   "devDependencies": {
