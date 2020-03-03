@@ -19,7 +19,7 @@ $ npm install -g aspen
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-aspen/0.0.0 darwin-x64 node-v11.11.0
+aspen/0.1.0 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
@@ -28,28 +28,14 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`aspen hello [FILE]`](#aspen-hello-file)
 * [`aspen help [COMMAND]`](#aspen-help-command)
-
-## `aspen hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ aspen hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ aspen hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/matlin/aspen-cli/blob/v0.0.0/src/commands/hello.ts)_
+* [`aspen jarvis`](#aspen-jarvis)
+* [`aspen login`](#aspen-login)
+* [`aspen query [QUERY]`](#aspen-query-query)
+* [`aspen source`](#aspen-source)
+* [`aspen source:gmail`](#aspen-sourcegmail)
+* [`aspen source:spotify`](#aspen-sourcespotify)
+* [`aspen store [FILE]`](#aspen-store-file)
 
 ## `aspen help [COMMAND]`
 
@@ -67,4 +53,108 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `aspen jarvis`
+
+Talk to Jarvis
+
+```
+USAGE
+  $ aspen jarvis
+```
+
+_See code: [src/commands/jarvis.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/jarvis.ts)_
+
+## `aspen login`
+
+Login or Register an account on Aspen Cloud
+
+```
+USAGE
+  $ aspen login
+```
+
+_See code: [src/commands/login.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/login.ts)_
+
+## `aspen query [QUERY]`
+
+Query data from AspenDB
+
+```
+USAGE
+  $ aspen query [QUERY]
+
+OPTIONS
+  -a, --app=app  id of the app to associate data with
+  -h, --help     show CLI help
+  --full
+
+EXAMPLES
+  $ aspen query --app spotify
+  [all docs in the app spotify]
+
+  $ aspen query --app spotify "{selector: {artist: {$eq: 'Chance the Rapper'}}}"
+  [all docs from 'chance the rapper' in the app spotify ]
+```
+
+_See code: [src/commands/query.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/query.ts)_
+
+## `aspen source`
+
+Fetch and store data from external sources like Gmail, Spotify, etc.
+
+```
+USAGE
+  $ aspen source
+
+OPTIONS
+  --preview
+  --save
+```
+
+_See code: [src/commands/source/index.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/index.ts)_
+
+## `aspen source:gmail`
+
+Login or Register an account on Aspen Cloud
+
+```
+USAGE
+  $ aspen source:gmail
+```
+
+_See code: [src/commands/source/gmail.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/gmail.ts)_
+
+## `aspen source:spotify`
+
+Download spotify data.
+
+```
+USAGE
+  $ aspen source:spotify
+
+OPTIONS
+  -p, --preview  Lets you preview the data for the resource.
+```
+
+_See code: [src/commands/source/spotify.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/spotify.ts)_
+
+## `aspen store [FILE]`
+
+Store JSON data from a file or stdin into an AspenDB
+
+```
+USAGE
+  $ aspen store [FILE]
+
+OPTIONS
+  -a, --app=app  (required) id of the app to associate data with
+  -h, --help     show CLI help
+
+EXAMPLE
+  $ cat my_songs.json | aspen store --app "my-music"
+  Succesfully added 450 items
+```
+
+_See code: [src/commands/store.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/store.ts)_
 <!-- commandsstop -->
