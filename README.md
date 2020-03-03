@@ -15,11 +15,11 @@ Backup and fetch all of your data from Gmail, Spotify, and more into a single da
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g aspen-cli
+$ npm install -g @aspen-cloud/aspen-cli
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-aspen-cli/0.1.0 darwin-x64 node-v11.11.0
+@aspen-cloud/aspen-cli/0.1.0 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
@@ -70,7 +70,7 @@ EXAMPLES
   [all docs from 'chance the rapper' in the app spotify ]
 ```
 
-_See code: [src/commands/query.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/query.ts)_
+_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.0/src/commands/query.ts)_
 
 ## `aspen source:spotify`
 
@@ -84,5 +84,5 @@ OPTIONS
   -p, --preview  Lets you preview the data for the resource.
 ```
 
-_See code: [src/commands/source/spotify.ts](https://github.com/matlin/aspen-cli/blob/v0.1.0/src/commands/source/spotify.ts)_
+_See code: [src/commands/source/spotify.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.0/src/commands/source/spotify.ts)_
 <!-- commandsstop -->
