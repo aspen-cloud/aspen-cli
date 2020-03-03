@@ -15,11 +15,11 @@ Backup and fetch all of your data from Gmail, Spotify, and more into a single da
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @aspen-cloud/aspen-cli
+$ npm install -g @aspen.cloud/aspen-cli
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-@aspen-cloud/aspen-cli/0.1.1 darwin-x64 node-v11.11.0
+@aspen.cloud/aspen-cli/0.1.1 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
