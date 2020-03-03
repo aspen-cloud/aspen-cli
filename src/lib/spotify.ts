@@ -1,23 +1,12 @@
 var http = require('http');
 const { URL } = require('url');
-import * as Queue from 'smart-request-balancer';
+import Queue from 'smart-request-balancer';
 import { Observable, from } from 'rxjs';
 const SpotifyWebApi = require('spotify-web-api-node');
-import * as fs from 'fs-extra';
-import {
-  mergeMap,
-  merge,
-  tap,
-  map,
-  mergeAll,
-  concatAll,
-  concatMap,
-  mapTo,
-  throttleTime
-} from 'rxjs/operators';
-import { RxSchema, RxJsonSchema } from 'rxdb';
+import fs from 'fs-extra';
+import { mergeMap } from 'rxjs/operators';
 
-const clientID = process.env.SPOTIFY_CLIENT_ID;
+const clientID = process.env.SPOTIFY_CLIENT_ID || '';
 
 const callbackUrl = 'http://localhost:8111/auth-callback/';
 
@@ -59,7 +48,15 @@ const TokenForwardPage = `
     </html>
 `;
 
-export function createAuthUrl({ clientID, redirectURI, scopes }) {
+export function createAuthUrl({
+  clientID,
+  redirectURI,
+  scopes
+}: {
+  clientID: string;
+  redirectURI: string;
+  scopes: string[];
+}) {
   return `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&redirect_uri=${encodeURI(
     redirectURI
   )}&scope=${encodeURI(scopes.join(' '))}`;
@@ -69,16 +66,15 @@ export async function startAuth(tokenPath: string) {
   await fs.ensureFile(tokenPath);
   try {
     const userConfig = await fs.readJSON(tokenPath);
-    //console.log(userConfig);
+
     if (userConfig.token && userConfig.expiresAt > new Date().getTime()) {
-      //console.error('using prexisiting token');
       spotifyApi.setAccessToken(userConfig.token);
       return {
         waitForAuth: Promise.resolve()
       };
     }
   } catch (e) {
-    //console.warn('Need new token. Initiating auth flow.');
+    console.error(e);
   }
   const waitForAuth = new Promise(async (resolve, reject) => {
     const server = http
@@ -99,8 +95,6 @@ export async function startAuth(tokenPath: string) {
               resolve();
             });
         }
-        const queryData = new URL(req.url, `http://${req.headers.host}`);
-        const code = queryData.searchParams.get('code');
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(TokenForwardPage);
         res.end();
@@ -232,7 +226,7 @@ export interface iResource {
   get: ResourceGetter;
   rateLimit?: RateLimit;
   options?: any;
-  schema?: RxJsonSchema;
+  schema?: {};
 }
 
 enum ResourceType {
@@ -412,7 +406,7 @@ export const resources: { [key: string]: iResource } = {
         'uri',
         'is_local'
       ]
-    } as RxJsonSchema<TrackDocType>
+    }
   },
   albums: {
     name: ResourceType.albums,

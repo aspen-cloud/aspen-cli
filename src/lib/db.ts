@@ -1,4 +1,4 @@
-import * as PouchDB from 'pouchdb';
+import PouchDB from 'pouchdb';
 
 PouchDB.plugin(require('pouchdb-adapter-node-websql'));
 const { getDataHome } = require('platform-folders');
@@ -6,6 +6,8 @@ const appDirectory = `${getDataHome()}/aspen/`;
 
 export default class AspenDB {
   app: string;
+  db: PouchDB.Database;
+
   static localDBPath = appDirectory + 'aspen_local.db';
 
   constructor(appName: string) {
@@ -28,7 +30,7 @@ export default class AspenDB {
     return rows;
   }
 
-  async find(query) {
+  async find(query: PouchDB.Find.FindRequest<{}>) {
     return this.db.find(query);
   }
 }

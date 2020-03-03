@@ -5,17 +5,14 @@ import {
   resources,
   startAuth,
   getResource,
-  getPlaylists,
   getTracksGenerator,
   iResource
 } from '../../lib/spotify';
-import { Action } from 'rxjs/internal/scheduler/Action';
-import * as Listr from 'listr';
-import { Observable, from } from 'rxjs';
+import Listr from 'listr';
 import { map, tap } from 'rxjs/operators';
 import * as path from 'path';
-import * as fs from 'fs';
 import AspenDB from '../../lib/db';
+import { from } from 'rxjs';
 
 /**
  * Steps
