@@ -30,7 +30,8 @@ USAGE
 <!-- commands -->
 * [`aspen help [COMMAND]`](#aspen-help-command)
 * [`aspen query [QUERY]`](#aspen-query-query)
-* [`aspen source:spotify`](#aspen-sourcespotify)
+* [`aspen source`](#aspen-source)
+* [`aspen store [FILE]`](#aspen-store-file)
 
 ## `aspen help [COMMAND]`
 
@@ -72,17 +73,36 @@ EXAMPLES
 
 _See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.2/src/commands/query.ts)_
 
-## `aspen source:spotify`
+## `aspen source`
 
-Download spotify data.
+Fetch and store data from external sources like Gmail, Spotify, etc.
 
 ```
 USAGE
-  $ aspen source:spotify
+  $ aspen source
 
 OPTIONS
-  -p, --preview  Lets you preview the data for the resource.
+  --preview
 ```
 
-_See code: [src/commands/source/spotify.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.2/src/commands/source/spotify.ts)_
+_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.2/src/commands/source/index.ts)_
+
+## `aspen store [FILE]`
+
+Store JSON data from a file or stdin into an AspenDB
+
+```
+USAGE
+  $ aspen store [FILE]
+
+OPTIONS
+  -a, --app=app  (required) id of the app to associate data with
+  -h, --help     show CLI help
+
+EXAMPLE
+  $ cat my_songs.json | aspen store --app "music"
+  Succesfully added 450 items
+```
+
+_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.2/src/commands/store.ts)_
 <!-- commandsstop -->
