@@ -1,7 +1,7 @@
 {
   "name": "@aspen.cloud/aspen-cli",
   "description": "Backup and fetch all of your data from Gmail, Spotify, and more into a single database",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Aspen @aspen-cloud",
   "bin": {
     "aspen": "./bin/run"
