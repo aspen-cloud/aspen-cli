@@ -19,7 +19,7 @@ $ npm install -g @aspen.cloud/aspen-cli
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-@aspen.cloud/aspen-cli/0.1.3 darwin-x64 node-v11.11.0
+@aspen.cloud/aspen-cli/0.1.4 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
@@ -29,6 +29,11 @@ USAGE
 # Commands
 <!-- commands -->
 * [`aspen help [COMMAND]`](#aspen-help-command)
+* [`aspen plugins`](#aspen-plugins)
+* [`aspen plugins:install PLUGIN...`](#aspen-pluginsinstall-plugin)
+* [`aspen plugins:link PLUGIN`](#aspen-pluginslink-plugin)
+* [`aspen plugins:uninstall PLUGIN...`](#aspen-pluginsuninstall-plugin)
+* [`aspen plugins:update`](#aspen-pluginsupdate)
 * [`aspen query [QUERY]`](#aspen-query-query)
 * [`aspen source`](#aspen-source)
 * [`aspen store [FILE]`](#aspen-store-file)
@@ -49,6 +54,123 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `aspen plugins`
+
+list installed plugins
+
+```
+USAGE
+  $ aspen plugins
+
+OPTIONS
+  --core  show core plugins
+
+EXAMPLE
+  $ aspen plugins
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/index.ts)_
+
+## `aspen plugins:install PLUGIN...`
+
+installs a plugin into the CLI
+
+```
+USAGE
+  $ aspen plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to install
+
+OPTIONS
+  -f, --force    yarn install with force flag
+  -h, --help     show CLI help
+  -v, --verbose
+
+DESCRIPTION
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ aspen plugins:add
+
+EXAMPLES
+  $ aspen plugins:install myplugin 
+  $ aspen plugins:install https://github.com/someuser/someplugin
+  $ aspen plugins:install someuser/someplugin
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/install.ts)_
+
+## `aspen plugins:link PLUGIN`
+
+links a plugin into the CLI for development
+
+```
+USAGE
+  $ aspen plugins:link PLUGIN
+
+ARGUMENTS
+  PATH  [default: .] path to plugin
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+
+DESCRIPTION
+  Installation of a linked plugin will override a user-installed or core plugin.
+
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
+  command will override the user-installed or core plugin implementation. This is useful for development work.
+
+EXAMPLE
+  $ aspen plugins:link myplugin
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/link.ts)_
+
+## `aspen plugins:uninstall PLUGIN...`
+
+removes a plugin from the CLI
+
+```
+USAGE
+  $ aspen plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+
+ALIASES
+  $ aspen plugins:unlink
+  $ aspen plugins:remove
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/uninstall.ts)_
+
+## `aspen plugins:update`
+
+update installed plugins
+
+```
+USAGE
+  $ aspen plugins:update
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/update.ts)_
 
 ## `aspen query [QUERY]`
 
@@ -71,7 +193,7 @@ EXAMPLES
   [all docs from 'chance the rapper' in the app spotify ]
 ```
 
-_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.3/src/commands/query.ts)_
+_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.4/src/commands/query.ts)_
 
 ## `aspen source`
 
@@ -85,7 +207,7 @@ OPTIONS
   --preview
 ```
 
-_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.3/src/commands/source/index.ts)_
+_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.4/src/commands/source/index.ts)_
 
 ## `aspen store [FILE]`
 
@@ -104,5 +226,5 @@ EXAMPLE
   Succesfully added 450 items
 ```
 
-_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.3/src/commands/store.ts)_
+_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.4/src/commands/store.ts)_
 <!-- commandsstop -->
