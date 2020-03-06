@@ -1,5 +1,4 @@
 import { Command, flags } from '@oclif/command';
-import * as readline from 'readline';
 import AspenDB from '@aspen.cloud/aspendb';
 
 export default class Query extends Command {
@@ -24,7 +23,7 @@ export default class Query extends Command {
     app: flags.string({
       char: 'a',
       description: 'id of the app to associate data with',
-      required: false
+      required: true
     })
   };
 
@@ -35,9 +34,9 @@ export default class Query extends Command {
 
     const app = flags.app;
 
-    const db = new AspenDB(app!);
+    const db = new AspenDB(app);
 
-    db.all(flags.full).then(docs => {
+    db.all({ fullDocs: flags.full }).then(docs => {
       this.log(JSON.stringify(docs));
     });
   }

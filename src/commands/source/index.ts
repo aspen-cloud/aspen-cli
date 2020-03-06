@@ -1,6 +1,5 @@
 import { Command, flags } from '@oclif/command';
 import * as inquirer from 'inquirer';
-import cli from 'cli-ux';
 
 export class Source extends Command {
   static description =

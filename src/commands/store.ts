@@ -1,6 +1,6 @@
 import { Command, flags } from '@oclif/command';
 import * as readline from 'readline';
-import AspenDB from '../lib/db';
+import AspenDB from '@aspen.cloud/aspendb';
 import { Observable } from 'rxjs';
 
 export default class Store extends Command {

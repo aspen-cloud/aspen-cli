@@ -8,7 +8,7 @@
   },
   "bugs": "https://github.com/aspen-cloud/aspen-cli/issues",
   "dependencies": {
-    "@aspen.cloud/aspendb": "^0.1.2",
+    "@aspen.cloud/aspendb": "^0.2.1",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
