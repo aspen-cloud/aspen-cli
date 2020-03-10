@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@aspen.cloud/aspendb@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@aspen.cloud/aspendb/-/aspendb-0.2.1.tgz#bcc8fa642c30cdbed0d621f8b61a304a24bfb89a"
-  integrity sha512-AnXnj1qp2POpyvaQ2eu9mRs1US8OBcro2biJw6zI5XaclWQspTP9cPX7Q/TyA51bPmVSjyqGQPCTWmmBwrgfwQ==
+"@aspen.cloud/aspendb@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@aspen.cloud/aspendb/-/aspendb-0.2.2.tgz#258c5368cacbd4118af8f210b2295acfbdcb6928"
+  integrity sha512-KFDvOHSMuF09j0vx4NhwEjgRdVHvta3wZN1OWvpy9EuWviPFBSximcRH+7fyOv8IO4mt2JD4szQ0blCqq6QVcQ==
   dependencies:
     "@types/node" "^13.7.7"
     "@types/pouchdb" "^6.4.0"
