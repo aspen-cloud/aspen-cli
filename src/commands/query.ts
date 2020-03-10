@@ -7,15 +7,11 @@ export default class Query extends Command {
   static examples = [
     `$ aspen query --app spotify
 [all docs in the app spotify]
-`,
-    `$ aspen query --app spotify "{selector: {artist: {$eq: 'Chance the Rapper'}}}"
-[all docs from 'chance the rapper' in the app spotify ]
 `
   ];
 
   static flags = {
     help: flags.help({ char: 'h' }),
-    // flag with a value (-n, --name=VALUE)
     full: flags.boolean({
       required: false,
       default: false
@@ -36,7 +32,7 @@ export default class Query extends Command {
 
     const db = new AspenDB(app);
 
-    db.all({ fullDocs: flags.full }).then(docs => {
+    db.all({ fullDocs: flags.full }).then((docs: {}[]) => {
       this.log(JSON.stringify(docs));
     });
   }
