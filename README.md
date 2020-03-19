@@ -12,30 +12,27 @@ Fetch and query all of your data from Gmail, Spotify, and more into a single dat
 [![License](https://img.shields.io/npm/l/aspen.svg)](https://github.com/matlin/aspen-cli/blob/master/package.json)
 
 <!-- toc -->
-
-- [Aspen CLI](#aspen-cli)
-- [Usage](#usage)
-- [Roadmap](#roadmap)
-- [Plugins](#plugins)
-- [Commands](#commands)
-  <!-- tocstop -->
+* [Aspen CLI](#aspen-cli)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Plugins](#plugins)
+* [Commands](#commands)
+<!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @aspen.cloud/aspen-cli
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-@aspen.cloud/aspen-cli/0.1.6 darwin-x64 node-v11.11.0
+@aspen.cloud/aspen-cli/0.2.0 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Roadmap
@@ -58,18 +55,17 @@ USAGE
 # Commands
 
 <!-- commands -->
-
-- [`aspen help [COMMAND]`](#aspen-help-command)
-- [`aspen index INDEX`](#aspen-index-index)
-- [`aspen info [QUERY]`](#aspen-info-query)
-- [`aspen plugins`](#aspen-plugins)
-- [`aspen plugins:install PLUGIN...`](#aspen-pluginsinstall-plugin)
-- [`aspen plugins:link PLUGIN`](#aspen-pluginslink-plugin)
-- [`aspen plugins:uninstall PLUGIN...`](#aspen-pluginsuninstall-plugin)
-- [`aspen plugins:update`](#aspen-pluginsupdate)
-- [`aspen query [QUERY]`](#aspen-query-query)
-- [`aspen source`](#aspen-source)
-- [`aspen store [FILE]`](#aspen-store-file)
+* [`aspen help [COMMAND]`](#aspen-help-command)
+* [`aspen index INDEX`](#aspen-index-index)
+* [`aspen info [QUERY]`](#aspen-info-query)
+* [`aspen plugins`](#aspen-plugins)
+* [`aspen plugins:install PLUGIN...`](#aspen-pluginsinstall-plugin)
+* [`aspen plugins:link PLUGIN`](#aspen-pluginslink-plugin)
+* [`aspen plugins:uninstall PLUGIN...`](#aspen-pluginsuninstall-plugin)
+* [`aspen plugins:update`](#aspen-pluginsupdate)
+* [`aspen query [QUERY]`](#aspen-query-query)
+* [`aspen source`](#aspen-source)
+* [`aspen store [FILE]`](#aspen-store-file)
 
 ## `aspen help [COMMAND]`
 
@@ -105,7 +101,7 @@ EXAMPLE
   [all docs in the app spotify]
 ```
 
-_See code: [src/commands/index/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/index/index.ts)_
+_See code: [src/commands/index/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.2.0/src/commands/index/index.ts)_
 
 ## `aspen info [QUERY]`
 
@@ -119,7 +115,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/info.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/info.ts)_
+_See code: [src/commands/info.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.2.0/src/commands/info.ts)_
 
 ## `aspen plugins`
 
@@ -159,15 +155,15 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
   $ aspen plugins:add
 
 EXAMPLES
-  $ aspen plugins:install myplugin
+  $ aspen plugins:install myplugin 
   $ aspen plugins:install https://github.com/someuser/someplugin
   $ aspen plugins:install someuser/someplugin
 ```
@@ -192,7 +188,7 @@ OPTIONS
 DESCRIPTION
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
   command will override the user-installed or core plugin implementation. This is useful for development work.
 
 EXAMPLE
@@ -257,7 +253,7 @@ EXAMPLE
   [all docs in the app spotify]
 ```
 
-_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/query.ts)_
+_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.2.0/src/commands/query.ts)_
 
 ## `aspen source`
 
@@ -271,7 +267,7 @@ OPTIONS
   --preview
 ```
 
-_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/source/index.ts)_
+_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.2.0/src/commands/source/index.ts)_
 
 ## `aspen store [FILE]`
 
@@ -290,6 +286,5 @@ EXAMPLE
   Succesfully added 450 items
 ```
 
-_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/store.ts)_
-
+_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.2.0/src/commands/store.ts)_
 <!-- commandsstop -->
