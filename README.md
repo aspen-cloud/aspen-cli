@@ -2,8 +2,9 @@
 
 Fetch and query all of your data from Gmail, Spotify, and more into a single database
 
-- Supports plugins on NPM for new sources
+- Build your own sources/connections and publish on NPM
 - Query your data by source
+- Exchange queries via plugins
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/aspen.svg)](https://npmjs.com/package/@aspen.cloud/aspen-cli)
@@ -11,15 +12,18 @@ Fetch and query all of your data from Gmail, Spotify, and more into a single dat
 [![License](https://img.shields.io/npm/l/aspen.svg)](https://github.com/matlin/aspen-cli/blob/master/package.json)
 
 <!-- toc -->
-* [Aspen CLI](#aspen-cli)
-* [Usage](#usage)
-* [Plugins](#plugins)
-* [Commands](#commands)
-<!-- tocstop -->
+
+- [Aspen CLI](#aspen-cli)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Plugins](#plugins)
+- [Commands](#commands)
+  <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @aspen.cloud/aspen-cli
 $ aspen COMMAND
@@ -31,7 +35,21 @@ USAGE
   $ aspen COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
+# Roadmap
+
+- [x] CLI access to [AspenDB](https://www.github.com/aspen-cloud/aspendb)
+- [x] Plugin support for different datasources
+- [x] Spotify plugin
+- [x] Query support with [Mango Queries](https://docs.couchdb.org/en/2.2.0/api/database/find.html#selector-syntax)
+- [ ] Gmail plugin
+- [ ] Sync data to Aspen Cloud for multi-device support and web access
+- [ ] Auto-discovery schema for app
+- [ ] Add option to automatically build index for query
+- [ ] Google Takeout importer
+- [ ] Facebook download importer
 
 # Plugins
 
@@ -40,16 +58,18 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`aspen help [COMMAND]`](#aspen-help-command)
-* [`aspen info [QUERY]`](#aspen-info-query)
-* [`aspen plugins`](#aspen-plugins)
-* [`aspen plugins:install PLUGIN...`](#aspen-pluginsinstall-plugin)
-* [`aspen plugins:link PLUGIN`](#aspen-pluginslink-plugin)
-* [`aspen plugins:uninstall PLUGIN...`](#aspen-pluginsuninstall-plugin)
-* [`aspen plugins:update`](#aspen-pluginsupdate)
-* [`aspen query [QUERY]`](#aspen-query-query)
-* [`aspen source`](#aspen-source)
-* [`aspen store [FILE]`](#aspen-store-file)
+
+- [`aspen help [COMMAND]`](#aspen-help-command)
+- [`aspen index INDEX`](#aspen-index-index)
+- [`aspen info [QUERY]`](#aspen-info-query)
+- [`aspen plugins`](#aspen-plugins)
+- [`aspen plugins:install PLUGIN...`](#aspen-pluginsinstall-plugin)
+- [`aspen plugins:link PLUGIN`](#aspen-pluginslink-plugin)
+- [`aspen plugins:uninstall PLUGIN...`](#aspen-pluginsuninstall-plugin)
+- [`aspen plugins:update`](#aspen-pluginsupdate)
+- [`aspen query [QUERY]`](#aspen-query-query)
+- [`aspen source`](#aspen-source)
+- [`aspen store [FILE]`](#aspen-store-file)
 
 ## `aspen help [COMMAND]`
 
@@ -67,6 +87,25 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `aspen index INDEX`
+
+Index data in AspenDB
+
+```
+USAGE
+  $ aspen index INDEX
+
+OPTIONS
+  -a, --app=app  (required) ID of the app to query
+  -h, --help     show CLI help
+
+EXAMPLE
+  $ aspen index --app spotify '{"fields": ["type"]}'
+  [all docs in the app spotify]
+```
+
+_See code: [src/commands/index/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/index/index.ts)_
 
 ## `aspen info [QUERY]`
 
@@ -120,15 +159,15 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
   $ aspen plugins:add
 
 EXAMPLES
-  $ aspen plugins:install myplugin 
+  $ aspen plugins:install myplugin
   $ aspen plugins:install https://github.com/someuser/someplugin
   $ aspen plugins:install someuser/someplugin
 ```
@@ -153,7 +192,7 @@ OPTIONS
 DESCRIPTION
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
   command will override the user-installed or core plugin implementation. This is useful for development work.
 
 EXAMPLE
@@ -208,9 +247,10 @@ USAGE
   $ aspen query [QUERY]
 
 OPTIONS
-  -a, --app=app  (required) id of the app to associate data with
-  -h, --help     show CLI help
-  --full
+  -a, --app=app      (required) ID of the app to query
+  -h, --help         show CLI help
+  -q, --query=query  Query your data with Mango syntax
+  --full             Whether to include the full documents
 
 EXAMPLE
   $ aspen query --app spotify
@@ -251,4 +291,5 @@ EXAMPLE
 ```
 
 _See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/store.ts)_
+
 <!-- commandsstop -->

@@ -14,12 +14,18 @@ export default class Query extends Command {
     help: flags.help({ char: 'h' }),
     full: flags.boolean({
       required: false,
+      description: 'Whether to include the full documents',
       default: false
     }),
     app: flags.string({
       char: 'a',
-      description: 'id of the app to associate data with',
+      description: 'ID of the app to query',
       required: true
+    }),
+    query: flags.string({
+      char: 'q',
+      description: 'Query your data with Mango syntax',
+      required: false
     })
   };
 
@@ -28,12 +34,18 @@ export default class Query extends Command {
   async run() {
     const { args, flags } = this.parse(Query);
 
-    const app = flags.app;
+    const { app, query } = flags;
 
     const db = new AspenDB().app(app);
 
-    db.all({ fullDocs: flags.full }).then((docs: {}[]) => {
-      this.log(JSON.stringify(docs));
-    });
+    if (query) {
+      db.find(JSON.parse(query)).then(result =>
+        this.log(JSON.stringify(result))
+      );
+    } else {
+      db.all({ fullDocs: flags.full }).then((docs: {}[]) => {
+        this.log(JSON.stringify(docs));
+      });
+    }
   }
 }
