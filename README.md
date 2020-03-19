@@ -19,7 +19,7 @@ $ npm install -g @aspen.cloud/aspen-cli
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-@aspen.cloud/aspen-cli/0.1.4 darwin-x64 node-v11.11.0
+@aspen.cloud/aspen-cli/0.1.5 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
@@ -29,6 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`aspen help [COMMAND]`](#aspen-help-command)
+* [`aspen info [QUERY]`](#aspen-info-query)
 * [`aspen plugins`](#aspen-plugins)
 * [`aspen plugins:install PLUGIN...`](#aspen-pluginsinstall-plugin)
 * [`aspen plugins:link PLUGIN`](#aspen-pluginslink-plugin)
@@ -54,6 +55,20 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `aspen info [QUERY]`
+
+Get info about your installation
+
+```
+USAGE
+  $ aspen info [QUERY]
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/info.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/info.ts)_
 
 ## `aspen plugins`
 
@@ -181,19 +196,16 @@ USAGE
   $ aspen query [QUERY]
 
 OPTIONS
-  -a, --app=app  id of the app to associate data with
+  -a, --app=app  (required) id of the app to associate data with
   -h, --help     show CLI help
   --full
 
-EXAMPLES
+EXAMPLE
   $ aspen query --app spotify
   [all docs in the app spotify]
-
-  $ aspen query --app spotify "{selector: {artist: {$eq: 'Chance the Rapper'}}}"
-  [all docs from 'chance the rapper' in the app spotify ]
 ```
 
-_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.4/src/commands/query.ts)_
+_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/query.ts)_
 
 ## `aspen source`
 
@@ -207,7 +219,7 @@ OPTIONS
   --preview
 ```
 
-_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.4/src/commands/source/index.ts)_
+_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/source/index.ts)_
 
 ## `aspen store [FILE]`
 
@@ -226,5 +238,5 @@ EXAMPLE
   Succesfully added 450 items
 ```
 
-_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.4/src/commands/store.ts)_
+_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/store.ts)_
 <!-- commandsstop -->
