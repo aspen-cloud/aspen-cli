@@ -30,6 +30,8 @@ export default class Index extends Command {
 
     const db = new AspenDB().app(app);
 
-    db.putIndex(JSON.parse(index)).then(console.log);
+    db.putIndex(JSON.parse(index)).then(result =>
+      this.log(JSON.stringify(result))
+    );
   }
 }
