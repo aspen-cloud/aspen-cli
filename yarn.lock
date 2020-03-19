@@ -2,14 +2,15 @@
 # yarn lockfile v1
 
 
-"@aspen.cloud/aspendb@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@aspen.cloud/aspendb/-/aspendb-0.2.2.tgz#258c5368cacbd4118af8f210b2295acfbdcb6928"
-  integrity sha512-KFDvOHSMuF09j0vx4NhwEjgRdVHvta3wZN1OWvpy9EuWviPFBSximcRH+7fyOv8IO4mt2JD4szQ0blCqq6QVcQ==
+"@aspen.cloud/aspendb@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@aspen.cloud/aspendb/-/aspendb-0.3.0.tgz#8746768e2c10897061fb5f14fe0dcf5e9b5a180f"
+  integrity sha512-k5OyMD/w74/QmJ6lAbA0n2sA1ml8q0lNSxHyP3jVbz0iQCIrcQH5spAZoJ3azzv3GJNT/5mkKY11oaF7j3sCaQ==
   dependencies:
     "@types/node" "^13.7.7"
     "@types/pouchdb" "^6.4.0"
     "@types/pouchdb-upsert" "^2.2.6"
+    "@types/shortid" "0.0.29"
     platform-folders "^0.4.1"
     pouchdb "^7.2.1"
     pouchdb-adapter-node-websql "^7.0.0"
@@ -489,6 +490,11 @@
     "@types/pouchdb-mapreduce" "*"
     "@types/pouchdb-node" "*"
     "@types/pouchdb-replication" "*"
+
+"@types/shortid@0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/shortid/-/shortid-0.0.29.tgz#8093ee0416a6e2bf2aa6338109114b3fbffa0e9b"
+  integrity sha1-gJPuBBam4r8qpjOBCRFLP7/6Dps=
 
 "@types/sinon@*":
   version "7.5.2"

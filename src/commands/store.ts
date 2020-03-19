@@ -29,7 +29,7 @@ Succesfully added 450 items
 
     const app = flags.app;
 
-    const db = new AspenDB(app);
+    const db = new AspenDB().app(app);
 
     readJSONFromStdIn().subscribe(resp => {
       if (Array.isArray(resp)) {
