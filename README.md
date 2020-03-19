@@ -19,7 +19,7 @@ $ npm install -g @aspen.cloud/aspen-cli
 $ aspen COMMAND
 running command...
 $ aspen (-v|--version|version)
-@aspen.cloud/aspen-cli/0.1.5 darwin-x64 node-v11.11.0
+@aspen.cloud/aspen-cli/0.1.6 darwin-x64 node-v11.11.0
 $ aspen --help [COMMAND]
 USAGE
   $ aspen COMMAND
@@ -68,7 +68,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/info.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/info.ts)_
+_See code: [src/commands/info.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/info.ts)_
 
 ## `aspen plugins`
 
@@ -205,7 +205,7 @@ EXAMPLE
   [all docs in the app spotify]
 ```
 
-_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/query.ts)_
+_See code: [src/commands/query.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/query.ts)_
 
 ## `aspen source`
 
@@ -219,7 +219,7 @@ OPTIONS
   --preview
 ```
 
-_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/source/index.ts)_
+_See code: [src/commands/source/index.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/source/index.ts)_
 
 ## `aspen store [FILE]`
 
@@ -238,5 +238,5 @@ EXAMPLE
   Succesfully added 450 items
 ```
 
-_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.5/src/commands/store.ts)_
+_See code: [src/commands/store.ts](https://github.com/aspen-cloud/aspen-cli/blob/v0.1.6/src/commands/store.ts)_
 <!-- commandsstop -->

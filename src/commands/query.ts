@@ -30,7 +30,7 @@ export default class Query extends Command {
 
     const app = flags.app;
 
-    const db = new AspenDB(app);
+    const db = new AspenDB().app(app);
 
     db.all({ fullDocs: flags.full }).then((docs: {}[]) => {
       this.log(JSON.stringify(docs));
