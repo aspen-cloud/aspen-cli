@@ -1,18 +1,24 @@
-aspen
-=====
+# Aspen CLI
 
-Backup and fetch all of your data from Gmail, Spotify, and more into a single database
+Fetch and query all of your data from Gmail, Spotify, and more into a single database
+
+- Supports plugins on NPM for new sources
+- Query your data by source
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/aspen.svg)](https://npmjs.org/package/aspen)
-[![Downloads/week](https://img.shields.io/npm/dw/aspen.svg)](https://npmjs.org/package/aspen)
+[![Version](https://img.shields.io/npm/v/aspen.svg)](https://npmjs.com/package/@aspen.cloud/aspen-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/aspen.svg)](https://npmjs.com/package/@aspen.cloud/aspen-cli)
 [![License](https://img.shields.io/npm/l/aspen.svg)](https://github.com/matlin/aspen-cli/blob/master/package.json)
 
 <!-- toc -->
+* [Aspen CLI](#aspen-cli)
 * [Usage](#usage)
+* [Plugins](#plugins)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
 $ npm install -g @aspen.cloud/aspen-cli
@@ -26,7 +32,13 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
+# Plugins
+
+- [@aspen.cloud/plugin-spotify](https://npmjs.com/package/@aspen.cloud/plugin-spotify) Download your saved tracks, playlists, albums
+
 # Commands
+
 <!-- commands -->
 * [`aspen help [COMMAND]`](#aspen-help-command)
 * [`aspen info [QUERY]`](#aspen-info-query)
