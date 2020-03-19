@@ -56,7 +56,7 @@
     "spotify",
     "cli"
   ],
-  "license": "Apache License 2.0",
+  "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
