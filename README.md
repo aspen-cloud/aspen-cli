@@ -50,7 +50,7 @@ USAGE
 - [ ] Facebook download importer
 
 # Plugins
-
+(Make a Pull Request to add your plugin here after you've published it!)
 - [@aspen.cloud/plugin-spotify](https://npmjs.com/package/@aspen.cloud/plugin-spotify) Download your saved tracks, playlists, albums
 
 # Commands
