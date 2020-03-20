@@ -42,6 +42,7 @@ USAGE
 - [x] Spotify plugin
 - [x] Query support with [Mango Queries](https://docs.couchdb.org/en/2.2.0/api/database/find.html#selector-syntax)
 - [ ] Gmail plugin
+- [ ] Bookmark plugin that can pull from Hackernews favorites, Github stars, and more
 - [ ] Sync data to Aspen Cloud for multi-device support and web access
 - [ ] Auto-discovery schema for app
 - [ ] Add option to automatically build index for query
